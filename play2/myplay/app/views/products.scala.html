@@ -1,0 +1,8 @@
+@import tags._
+@import common._
+
+@(products: Seq[String])
+
+@mainLayout(title="Acme Products"){
+    @productsIterator(products)
+}
