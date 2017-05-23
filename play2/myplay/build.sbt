@@ -6,7 +6,7 @@ lazy val `myplay` = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.7"
 
-libraryDependencies ++= Seq( jdbc , cache , ws  , anorm,
+libraryDependencies ++= Seq( jdbc , cache , ws  , anorm , filters,
     "mysql" % "mysql-connector-java" % "5.1.28"
 )
 

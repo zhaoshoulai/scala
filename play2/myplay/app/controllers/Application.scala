@@ -22,7 +22,16 @@ object Application extends Controller {
   }
 
   private val productMap = Map(1-> "Keyboard", 2-> "Mouse", 3->"Monitor")
+
   def listProducts() = Action {
     Ok(views.html.products(productMap.values.toSeq))
+  }
+
+  def listProductsAsTXT = Action{
+    Ok(views.txt.products(productMap))
+  }
+
+  def listProductsAsXML = Action{
+    Ok(views.xml.products(productMap))
   }
 }

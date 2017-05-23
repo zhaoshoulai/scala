@@ -1,0 +1,6 @@
+@(productMap: Map[Int, String])
+<products>
+    @for((id, name) <- productMap){
+        <product id="@id">@name</product>
+    }
+</products>

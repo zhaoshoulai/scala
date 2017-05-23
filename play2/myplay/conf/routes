@@ -12,3 +12,7 @@ GET     /hello                      controllers.Application.hello
 GET     /echo/:msg                  controllers.Application.echo(msg)
 GET     /v2/hello                   controllers.Application.helloRedirect
 GET     /products                   controllers.Application.listProducts
+GET     /products.txt               controllers.Application.listProductsAsTXT
+GET     /products.xml               controllers.Application.listProductsAsXML
+GET     /products/new               controllers.Products.create
+POST    /Products                   controllers.Products.postForm
