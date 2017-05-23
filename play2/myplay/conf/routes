@@ -16,3 +16,6 @@ GET     /products.txt               controllers.Application.listProductsAsTXT
 GET     /products.xml               controllers.Application.listProductsAsXML
 GET     /products/new               controllers.Products.create
 POST    /Products                   controllers.Products.postForm
+GET     /header_example             controllers.Application.modifyHeaders
+GET     /cookie_example             controllers.Application.modifyCookies
+GET     /session_example            controllers.Application.modifySession
