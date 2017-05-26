@@ -1,0 +1,6 @@
+@(sku: String, productForm: Form[controllers.ProductTest])
+@helper.form(action = routes.ProductTests.update(sku)) {
+    @helper.inputText(productForm("sku"))
+    @helper.inputText(productForm("title"))
+    <input type="submit" />
+}

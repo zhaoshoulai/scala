@@ -9,6 +9,7 @@ import anorm.SqlParser.{str, int}
   */
 case class Product(id:Long , name:String)
 object Product{
+
   val defaultParser = int("id") ~ str("name") map {
     case id ~ name => Product(id, name)
   }

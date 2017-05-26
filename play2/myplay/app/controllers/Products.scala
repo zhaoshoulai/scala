@@ -6,6 +6,7 @@ import play.api.mvc._
 /**
   * Created by zhaoshoulai on 2017/5/23.
   */
+
 object Products extends Controller{
   val form = Form(
     mapping(
@@ -29,5 +30,6 @@ object Products extends Controller{
       }
     )
   }
+
 }
 

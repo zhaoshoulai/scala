@@ -63,4 +63,34 @@ object Application extends Controller {
       }
     }
   }
+
+  //需要验证通过
+  def dashboard = AuthAction {
+    Ok("User dashboard")
+  }
+  def login = Action {
+    Ok("Please login")
+  }
+
+
+  object AuthAction extends ActionBuilder[Request]{
+    //import play.api.mvc.Results._
+    import scala.concurrent.Future
+
+    def invokeBlock[A](request: Request[A], block: (Request[A]) =>
+      Future[Result]) = {
+      request.cookies.get("auth") match {
+        case Some(authCookie) => {
+          Logger.info("Cookie: " + authCookie)
+          block(request)
+        }
+        case None => {
+          Logger.info("Redirecting to login page")
+          Future.successful(Redirect(routes.Application.login()))
+        }
+      }
+    }
+  }
+
+
 }
